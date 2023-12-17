@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Traceability Service - Login</title>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="container">
+            <div class="logo">Traceability</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="tracking.html">Tracking</a></li>
+                <li><a href="#">Login</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Login Page -->
+    <section class="login-section">
+        <div class="container">
+            <h2>Login</h2>
+            <form id="loginForm">
+                <p>Username = admin Password = 1234</p>
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+                
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                
+                <button type="button" onclick="validateLogin()">Login</button>
+            </form>
+
+            <div id="loginResult" class="hidden">
+                <p id="successMessage" class="success-message"></p>
+                <p id="errorMessage" class="error-message"></p>
+            </div>
+        </div>
+    </section>
+
+    <script src="login.js"></script>
+</body>
+</html>

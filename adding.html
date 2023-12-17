@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Traceability Service - Tracking</title>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="container">
+            <div class="logo">Traceability</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="tracking.html">Tracking</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Tracking Page -->
+    <section class="add-data-section" id="section4">
+        <div class="container">
+            <h2>Add Data</h2>
+        <form method="POST" action="https://script.google.com/macros/s/AKfycbz7fAW5MUdNrMMnOO7LfX9WMeUZ-l48bgoGCnvOW4W7Qd9sGSB2dUqlseMbin79QRM/exec" onsubmit="submitForm(event)">
+            <input name="TrackingNumber" type="text" placeholder="TrackingNumber" required>
+            <input name="Store" type="text" placeholder="Store" required>
+            <input name="Date" type="text" placeholder="Date" required>
+            <input name="Build" type="text" placeholder="Build" required>
+            <input name="Model" type="text" placeholder="Model" required>
+            <input name="Number" type="text" placeholder="Number" required>
+            <button type="submit">Adding</button>
+        </form>
+            <div class="message" id="addDataMessage"></div>
+        </div>
+
+        <div class="container" style="width: 100%; height: 80vh">
+    <iframe style="width: 80%; height: 80vh" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQJKAsSutYXCDKNRCGiLX9XZ7mYpl_QidXp4aqSVJtk_pBEqSJ6VWrMEPg6uCmAc2xHCJh3hOlRpjX2/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
+        </div>
+
+    </section>
+    <script>
+        function submitForm(event) {
+            var form = event.target;
+    
+            // Check if at least one input field has a value
+            var hasValue = Array.from(form.elements).some(element => element.type !== 'submit' && element.value.trim() !== '');
+    
+            if (!hasValue) {
+                alert('Please fill in at least one field before submitting.');
+                event.preventDefault(); // Prevent the default form submission
+            } else {
+                // Your code to handle the form submission
+                alert('Data submitted successfully!');
+    
+                // Reset the form
+                form.reset();
+                location.reload();
+            }
+    
+            return false; // Prevent the form from being submitted
+        }
+    </script>
+</body>
+</html>
